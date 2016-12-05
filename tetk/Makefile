@@ -1,3 +1,5 @@
+include ../helpers.make
+
 source_location = 'git@github.com:mhammell-laboratory/tetoolkit.git'
 bin_name = tetoolkit
 
