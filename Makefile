@@ -1,3 +1,13 @@
+# See <https://gist.github.com/mschubert/a0e4f3aeaf3558431890> for explanation.
+.PHONY: .FORCE
+.FORCE: ;
+
+define EXT_DEP
+$1/$2: .FORCE
+	make -C $1 $2
+endef
+
+ext_dep = $(foreach i,$2,$(eval $(call EXT_DEP,$1,$i)))
 
 .DELETE_ON_ERROR:
 
