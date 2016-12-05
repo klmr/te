@@ -1,3 +1,6 @@
+q = '$1'
+u = ${1:'%'=%}
+
 # See <https://gist.github.com/mschubert/a0e4f3aeaf3558431890> for explanation.
 .PHONY: .FORCE
 .FORCE: ;
