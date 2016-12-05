@@ -9,6 +9,8 @@ endef
 
 ext_dep = $(foreach i,$2,$(eval $(call EXT_DEP,$1,$i)))
 
+$(call ext_dep,tetk,install)
+
 .DELETE_ON_ERROR:
 
 .DEFAULT_GOAL := show-help
