@@ -12,6 +12,9 @@ endef
 
 ext_dep = $(foreach i,$2,$(eval $(call EXT_DEP,$1,$i)))
 
+include dirs.make
+include bsub.make
+
 .DELETE_ON_ERROR:
 
 .DEFAULT_GOAL := show-help
