@@ -5,6 +5,6 @@ SHELL := $(shell which bash)
 #
 
 bsub = scripts/bsub -K
-memreq = -M$1 -R'select[mem>$1] rusage[mem=$1]'
+memreq = -M$1 -R'select[mem>=$1] rusage[mem=$1]'
 
 # vim: ft=make
