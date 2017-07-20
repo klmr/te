@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+args=("$@")
+job=("${args[${#args[@]}-1]}")
+unset args[${#args[@]}-1]
+jobname="$(basename "$(<<< "$job" sed 's/ .*$//')")"
+logfile="logs/$jobname-%J.log"
+errfile="logs/$jobname-%J.err"
+[ ! -d logs ] && mkdir logs
+
+bsub -J "$jobname" -o "$logfile" -e "$errfile" "${args[@]}" "$job"
